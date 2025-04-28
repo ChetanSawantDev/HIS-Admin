@@ -17,7 +17,7 @@ public class PatientInvestigationLevel3 {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String patientInvestigationLevel3Id;
 
-    private Long patientId;
+    private String patientId;
 
     private String result;
 
@@ -29,8 +29,5 @@ public class PatientInvestigationLevel3 {
     @JoinColumn(name = "investigation_level3_id")
     private InvestigationLevel3 investigationLevel3;
 
-    private String status;
-    private Long enteredBy;
-    private LocalDateTime entryDate;
     private String comments;
 }

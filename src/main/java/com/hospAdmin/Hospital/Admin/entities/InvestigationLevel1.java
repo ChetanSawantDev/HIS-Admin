@@ -5,7 +5,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Data
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,8 +12,9 @@ import java.util.List;
 public class InvestigationLevel1 {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String investigation_level_id;
-    private String investigation_level1_name;
+    private String investigationLevelId;
+    @Column(name = "investigation_level1_name")
+    private String investigationLevel1Name;
     private String unit;
     private String referenceRange;
     private String type;

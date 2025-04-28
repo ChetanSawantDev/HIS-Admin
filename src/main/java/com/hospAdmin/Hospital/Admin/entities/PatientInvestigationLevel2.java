@@ -12,12 +12,13 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PatientInvestigationLevel2 {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String patientInvestigationLevel2Id;
 
-    private Long patientId;
+    private String patientId;
 
     private String result;
 
@@ -29,9 +30,6 @@ public class PatientInvestigationLevel2 {
     @JoinColumn(name = "parent_investigation1_id")
     private PatientInvestigationLevel1 parentInvestigation1;
 
-    private String status;
-    private Long enteredBy;
-    private LocalDateTime entryDate;
     private String comments;
     @OneToMany(mappedBy = "parentInvestigation2",cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<PatientInvestigationLevel3> patientInvestigationLevel3List;
